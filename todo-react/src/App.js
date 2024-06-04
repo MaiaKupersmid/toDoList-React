@@ -4,17 +4,14 @@ import List from './componentes/List/List.jsx';
 import { useState } from "react";
 
 function App() {
-  const [Items, setItems] = useState([]);
+  const [items, setItems] = useState([]);
+  const [masRapido, setRapido] = useState(null);
   return (
     <>
-    <List/>
-      <Input setItems={setItems} items={Items} type="text" id="Input" placeholder="Tarea..."> </Input>     
-      {/*<Button
-        onClick="rapido()"
-        class="addBtn boton2"
-        text="Ver mas rapoido"
-  />*/}    
-    </>
+    <Input setItems={setItems} items={items} setRapido={setRapido} masRapido={masRapido} type="text" id="Input" placeholder="Tarea..."> </Input>     
+    <List setItems={setItems} items={items}/>
+    <p>El mas rapido fue: {masRapido}</p>
+  </>
   );
 }
 

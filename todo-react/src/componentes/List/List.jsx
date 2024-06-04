@@ -1,20 +1,24 @@
-import Item from "../Item/Item.jsx"
+import Item from "../Item/Item.jsx";
+import './List.css';
 
-function List({setItems, Items}){
-    return(
+function List({ setItems, items }) {
+    console.log(items);
+    return (
         <>
-            {Items.map(i=> (
+            {items.map((i) => (
                 <Item
+                    key={i.id}
                     setItems={setItems}
-                    Items={Items}
-                    id= {i.id}
+                    items={items}
+                    id={i.id}
                     tarea={i.tarea}
                     fecha={i.fecha}
-                    tachado={i.tachado} 
+                    tacho={i.tacho}
+                    tachado={i.tachado}
                 />
             ))}
         </>
-    )
+    );
 }
 
 export default List;
